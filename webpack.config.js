@@ -1,22 +1,28 @@
-var path = require('path');
+const path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, 'src/frontend/public');
-var APP_DIR = path.resolve(__dirname, 'src/frontend/app');
-
-var config = {
-    entry: APP_DIR + '/index.jsx',
+const config = {
+    entry: path.resolve(__dirname, 'src/app/index.jsx'),
     output: {
-        path: BUILD_DIR,
+        path: path.resolve(__dirname, 'src/public'),
         filename: 'bundle.js'
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.jsx?/,
-                include: APP_DIR,
-                loader: 'babel-loader'
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            'react',
+                            'env'
+                        ]
+                    }
+                }
             }
         ]
     }
 };
+
 module.exports = config;
