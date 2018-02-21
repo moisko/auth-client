@@ -14,14 +14,14 @@ const config = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: [
-                            'react',
-                            'env'
-                        ]
+                        presets: ['react', 'env']
                     }
                 }
             }
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']
     }
 };
 
