@@ -9,12 +9,14 @@
   "author": "Boris Borisov",
   "license": "ISC",
   "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "axios": "^0.18.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
     "react-redux": "^4.4.8",
-    "react-router": "^3.2.0",
-    "redux": "^3.7.2",
-    "redux-form": "^7.2.3"
+    "react-router": "^2.0.1",
+    "redux": "^3.0.4",
+    "redux-form": "^5.0.1",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
