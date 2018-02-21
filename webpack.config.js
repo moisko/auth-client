@@ -1,31 +1,27 @@
-const path = require('path');
-
-const config = {
-    entry: path.resolve(__dirname, 'src/app/index.jsx'),
+module.exports = {
+    entry: ['./src/app/index.jsx'],
     output: {
-        path: path.resolve(__dirname, 'src/public'),
-        filename: 'bundle.js'
+        path: __dirname,
+        filename: './src/public/bundle.js'
     },
     module: {
-        rules: [
+        loaders: [
             {
-                test: /\.jsx?/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['react', 'env']
-                    }
-                }
+                loader: 'babel-loader',
+                query: {
+                    presets: ['react', 'env']
+                },
+                test: /\.jsx?$/,
+                exclude: /(node_modules)/
             }
         ]
     },
+    devtool: 'source-map',
     resolve: {
-        extensions: ['.js', '.jsx']
+        root: __dirname,
+        extensions: ['', '.js', '.jsx']
     },
     devServer: {
         historyApiFallback: true
     }
 };
-
-module.exports = config;
