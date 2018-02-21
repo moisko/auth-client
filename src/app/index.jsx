@@ -6,11 +6,16 @@ import {applyMiddleware, createStore} from 'redux';
 import App from './components/app';
 import reducers from './reducers';
 
+import {browserHistory, Route, Router} from 'react-router';
+
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 render(
     <Provider store={createStoreWithMiddleware(reducers)}>
-        <App/>
+        <Router history={browserHistory}>
+            <Route path="/" component={App}>
+            </Route>
+        </Router>
     </Provider>,
     document.getElementById('app')
 )
