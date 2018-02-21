@@ -2,9 +2,9 @@ import React from 'react';
 import {render} from 'react-dom';
 
 class App extends React.Component {
-  render () {
-    return <p> Hello, React again!</p>;
-  }
+    render() {
+        return <p>React simple starter</p>;
+    }
 }
 
 render(<App/>, document.getElementById('app'));
