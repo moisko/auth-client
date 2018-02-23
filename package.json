@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "dev": "webpack-dev-server --content-base=src",
-    "build": "webpack -w"
+    "build": "webpack -w",
+    "start": "node server.js"
   },
   "author": "Boris Borisov",
   "license": "ISC",
