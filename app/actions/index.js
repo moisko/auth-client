@@ -2,8 +2,7 @@ import axios from 'axios';
 import {browserHistory} from 'react-router';
 import {AUTH_ERROR, AUTH_USER, UNAUTH_USER} from "./types";
 
-// const API_URL = 'http://localhost:3090';
-const API_URL = 'https://stark-beach-56716.herokuapp.com';
+const API_URL = 'http://localhost:3090';
 
 export function signinUser({email, password}) {
     return function (dispatch) {
