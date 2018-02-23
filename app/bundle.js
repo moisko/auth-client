@@ -31529,8 +31529,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// const API_URL = 'http://localhost:3090';
-	var API_URL = 'https://stark-beach-56716.herokuapp.com';
+	var API_URL = 'http://localhost:3090';
 	
 	function signinUser(_ref) {
 	    var email = _ref.email,
