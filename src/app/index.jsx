@@ -8,6 +8,8 @@ import App from './components/app';
 import Signin from './components/auth/signin';
 import Signout from './components/auth/signout';
 import Signup from './components/auth/signup';
+import RequireAuth from './components/auth/require_auth';
+import Feature from './components/feature';
 import reducers from './reducers';
 
 import {browserHistory, Route, Router} from 'react-router';
@@ -21,6 +23,7 @@ render(
                 <Route path='signin' component={Signin}/>
                 <Route path='signout' component={Signout}/>
                 <Route path='signup' component={Signup}/>
+                <Route path='feature' component={RequireAuth(Feature)}/>
             </Route>
         </Router>
     </Provider>,
