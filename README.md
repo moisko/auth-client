@@ -1,1 +1,1 @@
-server side authentication with react and redux
+authentication during the server side rendering process - cookie based
