@@ -38978,14 +38978,55 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Header = function Header(_ref) {
     var auth = _ref.auth;
 
-    console.log('my auth status', auth);
+
+    var authButton = auth ? _react2.default.createElement(
+        'a',
+        { href: '/api/logout' },
+        'Logout'
+    ) : _react2.default.createElement(
+        'a',
+        { href: '/api/auth/google' },
+        'Login'
+    );
+
     return _react2.default.createElement(
-        'div',
+        'nav',
         null,
         _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/' },
-            'React SSR'
+            'div',
+            { className: 'nav-wrapper' },
+            _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/', className: 'brand-logo' },
+                'React SSR'
+            ),
+            _react2.default.createElement(
+                'ul',
+                { className: 'right' },
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { to: '/users' },
+                        'Users'
+                    )
+                ),
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { to: '/admins' },
+                        'Admins'
+                    )
+                ),
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    authButton
+                )
+            )
         )
     );
 };
@@ -39018,18 +39059,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Home = function Home() {
     return _react2.default.createElement(
         'div',
-        null,
+        { className: 'center-align', style: { marginTop: '100px' } },
         _react2.default.createElement(
-            'div',
+            'h3',
             null,
-            'Home component'
+            'Welcome!'
         ),
         _react2.default.createElement(
-            'button',
-            { onClick: function onClick() {
-                    return console.log('hi there');
-                } },
-            'Press me'
+            'p',
+            null,
+            'Check these awesome features'
         )
     );
 };
