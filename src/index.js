@@ -10,10 +10,9 @@ import createStore from './helpers/createStore';
 const app = express();
 
 app.use('/api',
-    proxy('http://react-ssr-api.herokuapp.com',
-        {
+    proxy('http://react-ssr-api.herokuapp.com', {
             proxyReqOptDecorator(opts) {
-                opts.header['x-forwarded-host'] = 'localhost:3000';
+                opts.headers['x-forwarded-host'] = 'localhost:3000';
                 return opts;
             }
         }
@@ -23,7 +22,7 @@ app.use('/api',
 app.use(express.static('public'));
 
 app.get('*', (req, resp) => {
-    const store = createStore();
+    const store = createStore(req);
 
     const promises = matchRoutes(Routes, req.path).map(({route}) => {
         return route.loadData ? route.loadData(store) : null;
