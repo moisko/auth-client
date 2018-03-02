@@ -8,8 +8,6 @@ export const FETCH_USERS = 'fetch_users';
 export const fetchUsers = () => async dispatch => {
     const res = await axios.get(`${API_URL}/users`);
 
-    console.log(res);
-
     dispatch({
         type: FETCH_USERS,
         payload: res
