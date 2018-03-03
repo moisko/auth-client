@@ -1,1 +1,1 @@
-authentication client
+jwt token based authentication client
